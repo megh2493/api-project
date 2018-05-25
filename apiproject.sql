@@ -1,14 +1,14 @@
-CREATE USER IF NOT EXISTS 'ODBC'@'localhost';
+CREATE USER 'ODBC'@'localhost';
 
-CREATE DATABASE IF NOT EXISTS apiproject;
+CREATE DATABASE apiproject;
 
 USE apiproject;
 
-CREATE TABLE IF NOT EXISTS Practices(PracticeId int NOT NULL, PracticeName varchar(50), Speciality varchar(50), LicenseNumber varchar(20), Address text, City varchar(30), State varchar(30), Zip varchar(5), Cell varchar(20), PRIMARY KEY (PracticeId));
+CREATE TABLE Practices(PracticeId int NOT NULL, PracticeName varchar(50), Speciality varchar(50), LicenseNumber varchar(20), Address text, City varchar(30), State varchar(30), Zip varchar(5), Cell varchar(20), PRIMARY KEY (PracticeId));
 
-CREATE TABLE IF NOT EXISTS Patients(PatientId int NOT NULL, FirstName varchar(50), LastName varchar(50), BirthDate date, Address text, City varchar(30), State varchar(30), MedicalNotes text, NextVisitDate date, Zip varchar(5), Cell varchar(20), PracticeId int NOT NULL, PRIMARY KEY (PatientId), FOREIGN KEY (PracticeId) REFERENCES Practices(PracticeId) ON DELETE CASCADE);
+CREATE TABLE Patients(PatientId int NOT NULL, FirstName varchar(50), LastName varchar(50), BirthDate date, Address text, City varchar(30), State varchar(30), MedicalNotes text, NextVisitDate date, Zip varchar(5), Cell varchar(20), PracticeId int NOT NULL, PRIMARY KEY (PatientId), FOREIGN KEY (PracticeId) REFERENCES Practices(PracticeId) ON DELETE CASCADE);
 
-CREATE TABLE IF NOT EXISTS Appointments(PatientId int NOT NULL, PracticeId int NOT NULL, AppointmentDate date, AppointmentTime TIME, Description text, FOREIGN KEY (PracticeId) REFERENCES Practices(PracticeId), FOREIGN KEY (PatientId) REFERENCES Patients(PatientId));
+CREATE TABLE Appointments(PatientId int NOT NULL, PracticeId int NOT NULL, AppointmentDate date, AppointmentTime TIME, Description text, FOREIGN KEY (PracticeId) REFERENCES Practices(PracticeId), FOREIGN KEY (PatientId) REFERENCES Patients(PatientId));
 
 INSERT INTO Practices VALUES (1, 'oncologist', 'radiation', '123567', '2101 yucca ave', 'fullerton', 'california', '91835', '2137852642'),
 (2, 'allergist', 'Asthma', '261567', '15339 falcon crest st', 'san diego', 'california', '92127', '6196400231'),
