@@ -19,8 +19,8 @@ Sikka Software assignment
 * the server can be accessed at [http://localhost:52222/](http://localhost:52222/)
 
 ## api
-* <code>/patients?\{key}=\{value}</code>: Retreives a JSON array of patients based on the options provided
-  Options:
+* <code>/patients?\{key}=\{value}</code>: Retreives a JSON array of patients based on the options provided <br>
+  **Options:**
   
   | Key | Value |
   | ---------------- | ----- |
@@ -35,8 +35,8 @@ Sikka Software assignment
   | endDate | 'MM/dd/yyyy' value denoting the end date of next visits to filter until Note: ignored when nextVisitDate is provided |
   | practiceId | integer value denoting the practice's id |
 
-* <code>/practices?\{key}=\{value}</code>: Retreives a JSON array of practices based on the options provided
-  Options:
+* <code>/practices?\{key}=\{value}</code>: Retreives a JSON array of practices based on the options provided <br>
+  **Options:**
   
   | Key | Value |
   | ---------------- | ----- |
@@ -47,8 +47,8 @@ Sikka Software assignment
   | state | string value denoting the practice's state |
   | zip | string value denoting the practice's zip code |
 
-* <code>/appointments?\{key}=\{value}</code>: Retreives a JSON array of appointments based on the options provided
-  Options:
+* <code>/appointments?\{key}=\{value}</code>: Retreives a JSON array of appointments based on the options provided <br>
+  **Options:**
   
   | Key | Value |
   | ---------------- | ----- |
